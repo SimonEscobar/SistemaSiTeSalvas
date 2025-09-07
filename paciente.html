@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Pacientes</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<nav>
+    <a href="./index.html">
+        <button class="btn-volver">Volver</button>
+    </a>
+</nav>
+<h1>Gestión de Pacientes</h1>
+
+<button class="btn-crear" onclick="abrirModalCrear()">➕ Crear Paciente</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Documento</th>
+      <th>Nombre</th>
+      <th>Teléfono</th>
+      <th>Correo</th>
+      <th>Dirección</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody id="tabla-pacientes">
+    <!-- Se cargan dinámicamente -->
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="cerrarModal()">×</span>
+    <h2 id="modal-titulo">Crear Paciente</h2>
+    <input type="text" id="documento" placeholder="Documento" />
+    <input type="text" id="nombre" placeholder="Nombre" />
+    <input type="text" id="telefono" placeholder="Teléfono" />
+    <input type="email" id="correo" placeholder="Correo" />
+    <input type="text" id="direccion" placeholder="Dirección" />
+    <div class="modal-actions">
+      <button onclick="guardarPaciente()" class="btn-crear" id="btn-guardar">Guardar</button>
+    </div>
+  </div>
+</div>
+<script src="js/paciente.js"></script>
+</body>
+</html>
